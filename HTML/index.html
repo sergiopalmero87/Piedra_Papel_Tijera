@@ -4,11 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/IMAGES/images.jpeg">
     <link rel="stylesheet" href="/CSS/styles.css">
     <script src="/JAVASCRIPT/code.js"></script>
     <title>Piedra Papel Tijera Lagarto Spock</title>
 </head>
-<body>
-    
+<div class="info-juego">
+
+    <div class="nombre-jugador">
+        <p id="nombre-jugador-inicio">Jugador</p> 
+    </div>
+
+    <div class="iniciar-nombres">
+
+        <div class="titulo">
+            <h1 id="titulo">PIEDRA, PAPEL, TIJERA, LAGARTO, SPOCK</h1>
+        </div>
+
+        <div class="box-name">
+            Escribe tu nombre: <input type="text" required placeholder="¡Escribe tu nombre para empezar!" class="input" id="input">
+            <button class="button" id="button">¡A jugar!</button>
+        </div>
+
+    </div>
+
+    <div class="oponente">
+        <p id="oponente">Oponente</p>
+    </div>
+
+</div> 
+
+
+<div class="participantes">
+
+    <div class="jugador">
+        
+        <button class="piedra" id="piedra-jug"></button>
+
+        <button class="papel" id="papel-jug"></button>
+
+        <button class="tijera" id="tijera-jug"></button>
+
+        <button class="lagarto" id="lagarto-jug"></button>
+
+        <button class="spock" id="spock-jug"></button>
+        
+    </div>
+
+     <div class="versus">
+
+        <img src="/IMAGES/versus.png" alt="versus" id="versus">
+
+     </div>
+
+    <div class="ordenador">
+
+        <img src="/IMAGES/granite.png" class="piedra" id="piedra-ord">
+
+        <img src="/IMAGES/airplane.png" class="papel" id="papel-ord">
+
+        <img src="/IMAGES/scissors.png" class="tijera" id="tijera-ord">
+
+        <img src="/IMAGES/iguana.png" class="lagarto" id="lagarto-ord">
+
+        <img src="/IMAGES/vulcan-salute.png" class="spock" id="spock-ord">
+        
+    </div>
+
+</div>
+
 </body>
+
+<footer class="footer" id="footer">
+
+    <p>Made by: Sergio Palmero Lopez</p>
+
+</footer>
 </html>
