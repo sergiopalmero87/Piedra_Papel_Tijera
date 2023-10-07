@@ -186,6 +186,7 @@ window.addEventListener("load", function () {
             rondasGanadasJugador = 0
             rondasGanadasOrdenador = 0
             nombreJugador.textContent = "Jugador"
+            
             console.clear()
 
             alert("Reiniciando... ¡Buena suerte de nuevo!")
