@@ -30,6 +30,10 @@ window.addEventListener("load", function () {
     spockButton = document.getElementById("spock-jug")
     reiniciar = document.getElementById("reinicio")
 
+    console.log("----------------------------------")
+    console.log("BIENVENIDO. ¡¡VAMOS A JUGAR!!")
+    console.log("----------------------------------")
+
     function iniciarPartida() {
         nombreJugador = document.getElementById('nombre-jugador-inicio');
         botonIniciar = document.getElementById('button')
