@@ -1,3 +1,5 @@
+// Variables globales
+
 let rockButton = "rock"
 let paperButton = "paper"
 let sccisorsButton = "sccisors"
@@ -21,7 +23,7 @@ let playerOption = null;
 let computerOption = null;
 
 
-
+// Listeners para cuando cargue la pantalla
 window.addEventListener("load", function () {
     rockButton = document.getElementById("piedra-jug")
     paperButton = document.getElementById("papel-jug")
@@ -34,6 +36,7 @@ window.addEventListener("load", function () {
     console.log("BIENVENIDO. ¡¡VAMOS A JUGAR!!")
     console.log("----------------------------------")
 
+    // Iniciar el juego.
     function iniciarPartida() {
         nombreJugador = document.getElementById('nombre-jugador-inicio');
         botonIniciar = document.getElementById('button')
@@ -60,46 +63,47 @@ window.addEventListener("load", function () {
         });
     }
 
-
+    // Jugar. Cada vez que el jugador pinche sobre su eleccion, esta se guarda en la variable playerOption.
+    //Lamamos a opcionOrdenador() y a checkOptions que le pasamos la eleccion de jugador y de ordenador.
     function jugar() {
         rockButton.addEventListener("click", () => {
             console.log("El jugador eligió: rock");
             playerOption = rockButton;
-            opcionOrdenador(rockButton);
+            opcionOrdenador();
             checkOptions(playerOption, computerOption)
         });
 
         paperButton.addEventListener("click", () => {
             console.log("El jugador eligió: paper");
             playerOption = paperButton;
-            opcionOrdenador(paperButton);
+            opcionOrdenador();
             checkOptions(playerOption, computerOption)
         });
 
         sccisorsButton.addEventListener("click", () => {
             console.log("El jugador eligió: scissors");
             playerOption = sccisorsButton;
-            opcionOrdenador(sccisorsButton);
+            opcionOrdenador();
             checkOptions(playerOption, computerOption)
         });
 
         lizardButton.addEventListener("click", () => {
             console.log("El jugador eligió: lizard");
             playerOption = lizardButton;
-            opcionOrdenador(lizardButton);
+            opcionOrdenador();
             checkOptions(playerOption, computerOption)
         });
 
         spockButton.addEventListener("click", () => {
             console.log("El jugador eligió: spock");
             playerOption = spockButton;
-            opcionOrdenador(spockButton);
+            opcionOrdenador();
             checkOptions(playerOption, computerOption)
         });
     }
 
 
-
+    // computerOption es = a una eleccion aleatoria. *5 porque hay 5 opciones a elegir.
     function opcionOrdenador() {
 
         computerOption = Math.floor(Math.random() * 5)
@@ -134,10 +138,13 @@ window.addEventListener("load", function () {
 
     }
 
-
-
-
-
+    // Comprobamos si el jugador ganó la partida o si lo hace el ordenador.
+    // Para ellos le pasamos la eleccion de jugador y la eleccion de ordenador.
+    // Esta funcion compara los resultados de cada variable.
+    // Cuando ha hecho la comparacion si el jugador gana la ronda etntonces la variable rondasGanadasJugador++
+    // Si lo hace el ordenador la variable rondasGanadasOrdenador++
+    // Si es empate solo muestra un mensaje de empate.
+    // Al final comprobamos que si alguna de las variables es igual a 3, se muestra un mensaje de ganador.
     function checkOptions(playerOption, computerOption) {
 
 
@@ -184,6 +191,8 @@ window.addEventListener("load", function () {
 
     }
 
+    // Funcion para reiniciar la partida.
+    // Algunas veces da un pequeño fallo ya que repite el alert().
     function reiniciarPartida() {
         reiniciar.addEventListener("click", () => {
             
