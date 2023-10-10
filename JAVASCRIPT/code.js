@@ -182,10 +182,13 @@ window.addEventListener("load", function () {
 
     function reiniciarPartida() {
         reiniciar.addEventListener("click", () => {
-            
+        
+            nombreJugador.textContent = "Jugador";
+
             rondasGanadasJugador = 0
             rondasGanadasOrdenador = 0
-            nombreJugador.textContent = "Jugador"
+
+            
             
             console.clear()
 
