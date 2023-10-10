@@ -195,10 +195,13 @@ window.addEventListener("load", function () {
     // Algunas veces da un pequeño fallo ya que repite el alert().
     function reiniciarPartida() {
         reiniciar.addEventListener("click", () => {
-            
+        
+            nombreJugador.textContent = "Jugador";
+
             rondasGanadasJugador = 0
             rondasGanadasOrdenador = 0
-            nombreJugador.textContent = "Jugador"
+
+            
             
             console.clear()
 
