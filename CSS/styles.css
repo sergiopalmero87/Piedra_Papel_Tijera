@@ -5,7 +5,8 @@
 }
 
 body {
-    background-color: #FAD7A0;
+    background: rgb(255,177,0);
+    background: linear-gradient(0deg, rgba(255,177,0,1) 0%, rgba(250,215,160,1) 84%);
 }
 
 .info-juego {
@@ -14,8 +15,6 @@ body {
     flex-direction: row;
     justify-content: space-around;
 }
-
-.nombre-jugador {}
 
 .iniciar-nombres {
 
@@ -33,11 +32,19 @@ body {
     width: 210px;
 }
 
+.button:hover{
+    border-radius: 5px;
+    background-color: rgb(158, 245, 158);
+    color: black;
+    transition: .2s ease-out;
+}
 
-
-.oponente {}
-
-
+.reinicio:hover{
+    border-radius: 5px;
+    background-color: rgb(246, 57, 57);
+    color: black;
+    transition: .2s ease-out;
+}
 
 .participantes {
     display: grid;
