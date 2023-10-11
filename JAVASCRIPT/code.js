@@ -23,7 +23,7 @@ let playerOption = null;
 let computerOption = null;
 
 
-// Listeners para cuando cargue la pantalla
+// Asignacion de variables cuando cargue la pantalla
 window.addEventListener("load", function () {
     rockButton = document.getElementById("piedra-jug")
     paperButton = document.getElementById("papel-jug")
@@ -32,25 +32,27 @@ window.addEventListener("load", function () {
     spockButton = document.getElementById("spock-jug")
     reiniciar = document.getElementById("reinicio")
 
+    nombreJugador = document.getElementById('nombre-jugador-inicio');
+    botonIniciar = document.getElementById('button')
+    inputBox = document.getElementById('input')
+
+    
+    botonIniciar = document.getElementById('button')
+    inputBox.focus()
+
     console.log("----------------------------------")
     console.log("BIENVENIDO. ¡¡VAMOS A JUGAR!!")
     console.log("----------------------------------")
 
     // Iniciar el juego.
     function iniciarPartida() {
-        nombreJugador = document.getElementById('nombre-jugador-inicio');
-        botonIniciar = document.getElementById('button')
-        inputBox = document.getElementById('input')
 
         //Inicio del juego cuando el jugador escriba su nombre y haga click en el boton.
-        botonIniciar = document.getElementById('button')
-        inputBox.focus()
-
         botonIniciar.addEventListener('click', function () {
+  
             // Obtenemos el valor ingresado en el input
             let nombreIngresado = document.getElementById('input').value;
             // Actualizamos su contenido
-            nombreJugador = document.getElementById('nombre-jugador-inicio');
             nombreJugador.textContent = nombreIngresado;
 
             if (nombreIngresado == "") {
@@ -60,41 +62,43 @@ window.addEventListener("load", function () {
             } else {
                 alert("¡¡Buena suerte " + nombreIngresado + "!! 🍀")
             }
+            
         });
     }
+    
 
     // Jugar. Cada vez que el jugador pinche sobre su eleccion, esta se guarda en la variable playerOption.
-    //Lamamos a opcionOrdenador() y a checkOptions que le pasamos la eleccion de jugador y de ordenador.
+    //Llamamos a opcionOrdenador() y a checkOptions() que le pasamos la eleccion de jugador y de ordenador.
     function jugar() {
-        rockButton.addEventListener("click", () => {
+            rockButton.addEventListener("click", () => {
             console.log("El jugador eligió: rock");
             playerOption = rockButton;
             opcionOrdenador();
             checkOptions(playerOption, computerOption)
         });
 
-        paperButton.addEventListener("click", () => {
+            paperButton.addEventListener("click", () => {
             console.log("El jugador eligió: paper");
             playerOption = paperButton;
             opcionOrdenador();
             checkOptions(playerOption, computerOption)
         });
 
-        sccisorsButton.addEventListener("click", () => {
+            sccisorsButton.addEventListener("click", () => {
             console.log("El jugador eligió: scissors");
             playerOption = sccisorsButton;
             opcionOrdenador();
             checkOptions(playerOption, computerOption)
         });
 
-        lizardButton.addEventListener("click", () => {
+            lizardButton.addEventListener("click", () => {
             console.log("El jugador eligió: lizard");
             playerOption = lizardButton;
             opcionOrdenador();
             checkOptions(playerOption, computerOption)
         });
 
-        spockButton.addEventListener("click", () => {
+            spockButton.addEventListener("click", () => {
             console.log("El jugador eligió: spock");
             playerOption = spockButton;
             opcionOrdenador();
@@ -103,7 +107,8 @@ window.addEventListener("load", function () {
     }
 
 
-    // computerOption es = a una eleccion aleatoria. *5 porque hay 5 opciones a elegir.
+    // computerOption es = a una eleccion aleatoria * 5. 
+    // Porque es entre 0 (inclusive) y 5 (exclusivo)
     function opcionOrdenador() {
 
         computerOption = Math.floor(Math.random() * 5)
@@ -139,9 +144,9 @@ window.addEventListener("load", function () {
     }
 
     // Comprobamos si el jugador ganó la partida o si lo hace el ordenador.
-    // Para ellos le pasamos la eleccion de jugador y la eleccion de ordenador.
+    // Para ello le pasamos la eleccion de jugador y la eleccion de ordenador.
     // Esta funcion compara los resultados de cada variable.
-    // Cuando ha hecho la comparacion si el jugador gana la ronda etntonces la variable rondasGanadasJugador++
+    // Cuando ha hecho la comparacion, si el jugador gana la ronda entonces la variable rondasGanadasJugador++
     // Si lo hace el ordenador la variable rondasGanadasOrdenador++
     // Si es empate solo muestra un mensaje de empate.
     // Al final comprobamos que si alguna de las variables es igual a 3, se muestra un mensaje de ganador.
@@ -179,11 +184,18 @@ window.addEventListener("load", function () {
             if (rondasGanadasJugador === 3) {
                 console.log("¡El jugador ha ganado la partida!");
                 alert("GANASTE ENHORABUENA 🥳🥳🥳")
-                reiniciarPartida()
+                nombreJugador.textContent = "Jugador";
+
+                rondasGanadasJugador = 0
+                rondasGanadasOrdenador = 0
+                console.clear()
             } else {
                 console.log("¡El ordenador ha ganado la partida!");
                 alert("FIN DE LA PARTIDA, MAS SUERTE LA PROXIMA VEZ 😭😭😭")
-                reiniciarPartida()
+                nombreJugador.textContent = "Jugador";
+                rondasGanadasJugador = 0
+                rondasGanadasOrdenador = 0
+                console.clear()
             }
 
 
@@ -197,12 +209,9 @@ window.addEventListener("load", function () {
         reiniciar.addEventListener("click", () => {
         
             nombreJugador.textContent = "Jugador";
-
             rondasGanadasJugador = 0
             rondasGanadasOrdenador = 0
 
-            
-            
             console.clear()
 
             alert("Reiniciando... ¡Buena suerte de nuevo!")
