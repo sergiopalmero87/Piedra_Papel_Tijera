@@ -58,9 +58,12 @@ window.addEventListener("load", function () {
             if (nombreIngresado == "") {
                 alert("Ingrese nombre para empezar a jugar")
                 nombreJugador.textContent = "Jugador";
+                inputBox.focus();
 
             } else {
                 alert("¡¡Buena suerte " + nombreIngresado + "!! 🍀")
+                jugar();
+                reiniciarPartida();
             }
             
         });
@@ -180,26 +183,28 @@ window.addEventListener("load", function () {
         console.log("Rondas ganadas por el Jugador: " + rondasGanadasJugador);
         console.log("Rondas ganadas por el Ordenador: " + rondasGanadasOrdenador);
 
-        if (rondasGanadasJugador === 3 || rondasGanadasOrdenador === 3) {
+        
             if (rondasGanadasJugador === 3) {
                 console.log("¡El jugador ha ganado la partida!");
                 alert("GANASTE ENHORABUENA 🥳🥳🥳")
                 nombreJugador.textContent = "Jugador";
-
+                inputBox.value = "";
                 rondasGanadasJugador = 0
                 rondasGanadasOrdenador = 0
                 console.clear()
-            } else {
+            } 
+            if (rondasGanadasOrdenador === 3){
                 console.log("¡El ordenador ha ganado la partida!");
                 alert("FIN DE LA PARTIDA, MAS SUERTE LA PROXIMA VEZ 😭😭😭")
                 nombreJugador.textContent = "Jugador";
+                inputBox.value = "";
                 rondasGanadasJugador = 0
                 rondasGanadasOrdenador = 0
                 console.clear()
             }
 
 
-        }
+        
 
     }
 
@@ -209,6 +214,7 @@ window.addEventListener("load", function () {
         reiniciar.addEventListener("click", () => {
         
             nombreJugador.textContent = "Jugador";
+            inputBox.value = "";
             rondasGanadasJugador = 0
             rondasGanadasOrdenador = 0
 
@@ -222,9 +228,8 @@ window.addEventListener("load", function () {
     }
 
 
-    //LLamadas a las funciones
+    //LLamadas a la funcion iniciarPartida() 
     iniciarPartida()
-    jugar()
-    reiniciarPartida()
+    
 
 })
