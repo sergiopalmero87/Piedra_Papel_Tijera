@@ -24,7 +24,7 @@ let computerOption = null;
 
 
 // Asignacion de variables cuando cargue la pantalla
-window.addEventListener("load", function () {
+function incializarVariables(){ 
     rockButton = document.getElementById("piedra-jug")
     paperButton = document.getElementById("papel-jug")
     sccisorsButton = document.getElementById("tijera-jug")
@@ -43,6 +43,7 @@ window.addEventListener("load", function () {
     console.log("----------------------------------")
     console.log("BIENVENIDO. ¡¡VAMOS A JUGAR!!")
     console.log("----------------------------------")
+}
 
     // Iniciar el juego.
     function iniciarPartida() {
@@ -78,6 +79,7 @@ window.addEventListener("load", function () {
             playerOption = rockButton;
             opcionOrdenador();
             checkOptions(playerOption, computerOption)
+            
         });
 
             paperButton.addEventListener("click", () => {
@@ -85,6 +87,7 @@ window.addEventListener("load", function () {
             playerOption = paperButton;
             opcionOrdenador();
             checkOptions(playerOption, computerOption)
+            
         });
 
             sccisorsButton.addEventListener("click", () => {
@@ -92,6 +95,7 @@ window.addEventListener("load", function () {
             playerOption = sccisorsButton;
             opcionOrdenador();
             checkOptions(playerOption, computerOption)
+            
         });
 
             lizardButton.addEventListener("click", () => {
@@ -99,6 +103,7 @@ window.addEventListener("load", function () {
             playerOption = lizardButton;
             opcionOrdenador();
             checkOptions(playerOption, computerOption)
+            
         });
 
             spockButton.addEventListener("click", () => {
@@ -106,6 +111,7 @@ window.addEventListener("load", function () {
             playerOption = spockButton;
             opcionOrdenador();
             checkOptions(playerOption, computerOption)
+            
         });
     }
 
@@ -228,8 +234,9 @@ window.addEventListener("load", function () {
     }
 
 
-    //LLamadas a la funcion iniciarPartida() 
-    iniciarPartida()
+    //LLamadas a la funcion iniciarVariables() e iniciarPartida() cuando cargue la pagina
     
-
-})
+    window.addEventListener("load", function () {  
+        incializarVariables()
+        iniciarPartida()
+    })
