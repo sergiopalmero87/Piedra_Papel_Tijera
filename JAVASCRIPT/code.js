@@ -208,10 +208,6 @@ function incializarVariables(){
                 rondasGanadasOrdenador = 0
                 console.clear()
             }
-
-
-        
-
     }
 
     // Funcion para reiniciar la partida.
